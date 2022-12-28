@@ -21,7 +21,11 @@ const ConversationSelect = ({id, conversationUsers} : {id: string, conversationU
   const router = useRouter()
 
   const onSelectConversation = () => {
-    router.push(`conversations/${id}`)
+    router.push({
+      pathname: '/conversations/[id]',
+      query: { id },
+
+    })
   }
   return (
     <StyledContainer onClick={onSelectConversation}>
